@@ -1,0 +1,39 @@
+﻿@model List<Category>
+    <div class="container">
+        <a asp-controller="Dasboard" asp-action="create" class="btn btn-danger mb-0 ">Create</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr style="text-align: center">
+                        <th >Id</th>
+                        <th>Category Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.CategoryId
+                            </td>
+                            <td>
+                                @item.CategoryName
+                            </td>
+                            <td style="text-align: center">
+                                <a asp-controller="Dasboard" asp-action="Delete" class="btn btn-primary">
+                                    Delete
+                                </a>
+                                <a asp-controller="Dasboard" asp-action="update" class="btn btn-success">
+                                    Update
+
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div> 
